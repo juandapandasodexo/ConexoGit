@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application    xmlns="http://xamarin.com/schemas/2014/forms" 
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                x:Class="Conexo.App">
+    
+    <Application.Resources>
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+
+             <!-- Resource Shared -->
+            <x:String x:Key="PickerDocumentType">Tipo de documento</x:String>
+            <x:String x:Key="NoDocumentType">Número de documento</x:String>
+            <x:String x:Key="ButtonCancel">CANCELAR</x:String>
+            <x:String x:Key="ButtonChange">CAMBIAR</x:String>
+            <x:String x:Key="ButtonRemember">RECORDAR</x:String>
+
+
+            <!-- Resource Validations -->
+            <x:String x:Key="UserValidation">Digite su usuario.</x:String>
+            <x:String x:Key="PasswordValidation">Digite su contraseña.</x:String>
+            <x:String x:Key="DocumentTypeValidation">Seleccione su tipo de documento.</x:String>
+            <x:String x:Key="NoDocumentValidation">Digite su número de documento.</x:String>
+            <x:String x:Key="EmailValidation">Digite su email.</x:String>
+            <x:String x:Key="CurrentPasswordValidation">Digite su contraseña actual.</x:String>
+            <x:String x:Key="NewPasswordValidation">Digite su contraseña nueva.</x:String>
+            <x:String x:Key="ConfirmNewPasswordValidation">Digite su contraseña nueva a confirmar.</x:String>
+            <x:String x:Key="SuccessChangingPassword">La contraseña se ha cambiado exitosamente.</x:String>
+            <x:String x:Key="UserNameValidation">Digite su nombre de usuario.</x:String>
+            <x:String x:Key="SamePasswordValidation">La contraseña nueva y la verificación no coinciden.</x:String>
+            <x:String x:Key="AllTextValidation">debe diligenciar todos los campos.</x:String>
+            
+
+
+            
+            <!-- Resource LoginPage -->
+            <x:String x:Key="TitleLoginPage">LOGIN</x:String>
+            <x:String x:Key="UserLoginPage">Usuario</x:String>
+            <x:String x:Key="PasswordLoginPage">Contraseña</x:String>
+            <x:String x:Key="ForgotPassWordLoginPage">Olvidó su contraseña</x:String>
+            <x:String x:Key="ChangePassWordLoginPage">Cambiar contraseña</x:String>
+            <x:String x:Key="RememberLoginPage">Recordar inicio de sesión</x:String>
+            <x:String x:Key="ButtonLoginPage">INGRESAR</x:String>
+
+            
+            <!-- Resource LoginMessagePage -->
+            <x:String x:Key="TitleLoginMessagePage">NO TIENES ACCESO</x:String>
+            <x:String x:Key="ButtonLoginMessagePage">VOLVER</x:String>
+            <x:String x:Key="ButtonLoginMessagePage2">CONTINUAR</x:String>
+            <x:String x:Key="InvalidAccessLoginMessagePage">Verifica tu usuario y contraseña</x:String>
+
+            
+            <!-- Resource ForgotPasswordPage -->
+            <x:String x:Key="TitleForgotPasswordPage">OLVIDÓ SU CONTRASEÑA</x:String>
+            <x:String x:Key="EmailForgotPasswordPage">Email</x:String>
+            <x:String x:Key="TitleInvalidForgotPasswordPage">DATOS NO VALIDOS</x:String>
+            <x:String x:Key="TitleValidForgotPasswordPage">RECORDAR CONTRASEÑA</x:String>
+            
+            
+            <!-- Resource ChangePasswordPage -->
+            <x:String x:Key="TitleChangePasswordPage">CAMBIAR CONTRASEÑA</x:String>
+            <x:String x:Key="CurrentPasswordChangePasswordPage">Contraseña actual</x:String>
+            <x:String x:Key="NewPasswordChangePasswordPage">Nueva contraseña</x:String>
+            <x:String x:Key="ConfirmNewPasswordChangePasswordPage">Confirmar contraseña</x:String>
+            <x:String x:Key="ErrorPasswordValidation">Codigo: 401, Unauthorized Token no válido.</x:String>
+
+
+            <!-- Resource ChoiceCucPage -->
+            <x:String x:Key="TitleChoiceCucPage">SELECCIONAR PUNTO DE VENTA</x:String>
+            <x:String x:Key="SellingPoint">Punto de venta afiliado</x:String>
+            <x:String x:Key="ButtonChoiceCucPage">VALIDAR BONOS</x:String>
+            <x:String x:Key="MessageChoiceCuc">Para la lectura de código de barras se recomienda tener una cámara de mínimo 8 Mpx con autoenfoque y leer  el código  de forma vertical</x:String>
+
+            
+            <!-- Resource ScannerBonusesPage -->
+            <x:String x:Key="TitleScannerBonusesPage">VALIDAR BONOS</x:String>
+            
+
+            <!-- Resource SummaryBonuses -->
+            <x:String x:Key="TitleSummaryBonuses">TOTAL BONOS APROBADOS</x:String>
+            
+            
+            <!-- Resource ChoiceCucPage -->
+            <x:String x:Key="SellingPointScannerBonusPage">Punto de Venta</x:String>
+            <x:String x:Key="FinishScannerBonusPage">TERMINAR LECTURA</x:String>
+            <x:String x:Key="NewScannerBonusPage">LEER NUEVO BONO</x:String>
+
+
+            <x:String x:Key="CleanBonusTitle">LIMPIAR BONOS</x:String>
+            <x:String x:Key="CleanBonusMessage">Debes terminar la transacción o limpiar la lista de los bonos antes de seleccionar un nuevo punto de venta</x:String>
+            
+
+
+
+            
+
+            
+            <x:String x:Key="ButtonFogotPasswordPage">RECORDAR</x:String>
+            <x:String x:Key="ButtonChangePasswordPage">CAMBIAR</x:String>
+            <x:String x:Key="SuccessChangePasswordPage">La contraseña ha sido cambiada exitosamente</x:String>
+            <x:String x:Key="FailChangePasswordPage">Ha ocurrido un error y la contraseña no ha sido cambiado</x:String>
+            
+            <x:String x:Key="BonusOkCucPage">BONO VÁLIDO</x:String>
+            <x:String x:Key="BonusFailedCucPage">BONO NO VÁLIDO</x:String>
+            <x:String x:Key="SecondTitleChoiceCucPage">Este bono es apto para redención.</x:String>
+            <x:String x:Key="SecondTitleFailedChoiceCucPage">Este bono ya ha sido registrado.</x:String>
+            <x:String x:Key="TitlePtvChoiceCucPage">Punto de venta:</x:String>
+            
+
+            
+            <Color x:Key="HeadingTextColor">#292863</Color>
+            <Color x:Key="GrayTextColor">#a8a8a8</Color>
+
+            
+            <Color x:Key="GrayLightTextColor">#f2f2f2</Color>
+            <Color x:Key="RedColor">#fe2a05</Color>
+           
+            
+            <!-- Styles -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource HeadingTextColor}"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+            <!-- Styles -->
+            
+            <Style x:Key="labelStyleBold" TargetType="Label">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">  
+                            <OnPlatform.iOS>SansaPro-Bold</OnPlatform.iOS>  
+                            <OnPlatform.Android>SansaPro-Bold.otf#SansaPro-Bold</OnPlatform.Android>   
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            <Style x:Key="labelStyleLight" TargetType="Label">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">  
+                            <OnPlatform.iOS>SansaPro-Light</OnPlatform.iOS>  
+                            <OnPlatform.Android>SansaPro-Light.otf#SansaPro-Light</OnPlatform.Android>   
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            <Style TargetType="Label">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">  
+                            <OnPlatform.iOS>SansaPro-Normal</OnPlatform.iOS>  
+                            <OnPlatform.Android>SansaPro-Normal.otf#SansaPro-Normal</OnPlatform.Android>   
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">  
+                            <OnPlatform.iOS>SansaPro-Light</OnPlatform.iOS>  
+                            <OnPlatform.Android>SansaPro-Light.otf#SansaPro-Light</OnPlatform.Android>   
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

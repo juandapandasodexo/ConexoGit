@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Conexo.Pages.SummaryBonusesPage"
+             xmlns:controls="clr-namespace:Conexo.Controls"
+             x:Name="SummaryBonus" 
+             Title="{StaticResource TitleSummaryBonuses}">
+     <ContentPage.Content>
+        <Grid>
+
+            <StackLayout Spacing="0">
+                <StackLayout.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="0,20,0,0" />
+                    </OnPlatform>
+                </StackLayout.Margin>
+                
+                <StackLayout 
+                    Margin="20,0,20,0" 
+                    VerticalOptions="FillAndExpand">
+                    
+                    <Label 
+                        Style="{DynamicResource labelStyleBold}"
+                        FontSize="Large" 
+                        HorizontalOptions="CenterAndExpand" 
+                        HorizontalTextAlignment="Center" 
+                        Margin="0, 15" Text="{StaticResource TitleSummaryBonuses}" 
+                        TextColor="{StaticResource HeadingTextColor}" 
+                        VerticalOptions="Start">
+                    </Label>
+                    
+                    <!-- TITULO DE LA LISTA-->
+                    <Grid 
+                        Padding="1"
+                        VerticalOptions="Start"
+                        HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label 
+                            Text=" " 
+                            WidthRequest="10" 
+                            FontSize="Small" 
+                            Grid.Column="0" 
+                            Grid.Row="0">
+                        </Label>
+                        <Label 
+                            Style="{DynamicResource labelStyleBold}"
+                            Text="PRODUCTO" 
+                            TextColor="{StaticResource HeadingTextColor}"  
+                            FontSize="Micro" 
+                            Grid.Column="1" 
+                            Grid.Row="0">
+                        </Label>
+                        <Label 
+                            Style="{DynamicResource labelStyleBold}"
+                            Text="BONO #" 
+                            TextColor="{StaticResource HeadingTextColor}"  
+                            FontSize="Micro" 
+                            Grid.Column="2" 
+                            Grid.Row="0">
+                        </Label>
+                        <Label 
+                            Style="{DynamicResource labelStyleBold}"
+                            Text="VALOR" 
+                            TextColor="{StaticResource HeadingTextColor}"  
+                            FontSize="Micro" 
+                            Grid.Column="3" 
+                            Grid.Row="0">
+                        </Label>
+                        <Label 
+                            Style="{DynamicResource labelStyleBold}"
+                            Text="ELIMINAR" 
+                            TextColor="{StaticResource HeadingTextColor}"  
+                            FontSize="Micro" 
+                            Grid.Column="4" 
+                            Grid.Row="0">
+                        </Label>
+                    </Grid>
+
+                    <Frame  
+                        BackgroundColor="{StaticResource GrayLightTextColor}"
+                        CornerRadius="10" 
+                        HasShadow="false" 
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        Margin="0" 
+                        Padding="0">
+
+                        <StackLayout
+                            Padding="1"
+                            Spacing="0"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand"
+                            Orientation="Vertical">
+
+
+                            <!-- LISTA DE PRODUCTOS -->
+                            <ListView 
+                                BackgroundColor="White"
+                                ItemsSource="{Binding ListValidateBonuses}" 
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand">
+                                
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell >
+                                            <Grid 
+                                                Padding="5"
+                                                HorizontalOptions="Fill">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1*" />
+                                                    <ColumnDefinition Width="5*" />
+                                                    <ColumnDefinition Width="4*" />
+                                                    <ColumnDefinition Width="3*" />
+                                                    <ColumnDefinition Width="5*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label 
+                                                    Text="{Binding id}" WidthRequest="10" 
+                                                    TextColor="{StaticResource RedColor}"
+                                                    VerticalTextAlignment="Center" FontSize="Micro" Grid.Column="0" Grid.Row="0">
+                                                </Label>
+                                                <Label 
+                                                    Text="{Binding tipoBono}" 
+                                                    VerticalTextAlignment="Center" FontSize="Micro" Grid.Column="1" Grid.Row="0">
+                                                </Label>
+                                                <Label 
+                                                    Text="{Binding nroBono}" 
+                                                    VerticalTextAlignment="Center" FontSize="Micro" Grid.Column="2" Grid.Row="0">
+                                                </Label>
+                                                <Label 
+                                                    Text="{Binding valorBono, StringFormat='{0:C0}'}" 
+                                                    VerticalTextAlignment="Center" FontSize="Micro" Grid.Column="3" Grid.Row="0">
+                                                </Label>
+                                                <StackLayout 
+                                                    Spacing="0"
+                                                    BackgroundColor="Transparent" 
+                                                    HorizontalOptions="CenterAndExpand" 
+                                                    VerticalOptions="CenterAndExpand" 
+                                                    Grid.Column="4" Grid.Row="0"  >
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer 
+                                                            Command="{Binding BindingContext.DeleteBonusCommand,Source={x:Reference SummaryBonus}}" 
+                                                            CommandParameter="{Binding codigoBono}">
+                                                        </TapGestureRecognizer>
+                                                    </StackLayout.GestureRecognizers>
+                                                    <Image 
+                                                        BackgroundColor="Transparent" 
+                                                        HorizontalOptions="CenterAndExpand" 
+                                                        Source="icon_minus" 
+                                                        VerticalOptions="CenterAndExpand" 
+                                                        HeightRequest="20">
+                                                    </Image>
+                                                </StackLayout>
+                                                
+                                                <!--<StackLayout 
+                                                    Grid.Column="4" Grid.Row="0" 
+                                                    HorizontalOptions="Fill"
+                                                    VerticalOptions="Fill">
+                                                    <Button 
+                                                        Image="icon_minus" 
+                                                        HorizontalOptions="Center" 
+                                                        Command="{Binding BindingContext.DeleteBonusCommand,Source={x:Reference SummaryBonus}}" 
+                                                        CommandParameter="{Binding codigoBono}" >
+                                                    </Button>
+                                                </StackLayout>-->
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+
+                            <StackLayout
+                                Orientation="Horizontal"
+                                HeightRequest="70"
+                                Spacing="1"
+                                HorizontalOptions="CenterAndExpand" 
+                                VerticalOptions="EndAndExpand"
+                                BackgroundColor="{StaticResource GrayLightTextColor}">
+
+                                <Label 
+                                    Style="{DynamicResource labelStyleBold}"
+                                    FontSize="Small" 
+                                    HorizontalTextAlignment="End" 
+                                    VerticalTextAlignment="Center"
+                                    Text="{Binding TotalBonus, Mode=TwoWay}"
+                                    TextColor="{StaticResource RedColor}">
+                                </Label>
+                                <Label 
+                                    Style="{DynamicResource labelStyleBold}"
+                                    FontSize="Small" 
+                                    HorizontalTextAlignment="Start" 
+                                    VerticalTextAlignment="Center"
+                                    Text=" bonos válidos"
+                                    TextColor="{StaticResource GrayTextColor}">
+                                </Label>
+                                
+                            </StackLayout>
+                            
+
+
+
+                            <StackLayout
+                                Orientation="Horizontal"
+                                HeightRequest="70"
+                                Spacing="1"
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="EndAndExpand"
+                                BackgroundColor="{StaticResource RedColor}">
+
+                                <StackLayout
+                                    Orientation="Horizontal"
+                                    HorizontalOptions="CenterAndExpand" 
+                                    VerticalOptions="CenterAndExpand"
+                                    BackgroundColor="{StaticResource RedColor}">
+
+                                    <Label 
+                                        Style="{DynamicResource labelStyleBold}"
+                                        Grid.Column="0" 
+                                        Grid.Row="0" 
+                                        FontSize="Medium" 
+                                        HorizontalOptions="Center"
+                                        VerticalTextAlignment="Center"
+                                        Text="Total  "
+                                        TextColor="White">
+                                    </Label>
+                                    <Label 
+                                        Style="{DynamicResource labelStyleBold}"
+                                        Grid.Column="1" 
+                                        Grid.Row="0" 
+                                        FontSize="Medium" 
+                                        HorizontalOptions="Center" 
+                                        VerticalTextAlignment="Center"
+                                        Text="{Binding ValorTotal, StringFormat='{0:C0}', Mode=TwoWay}"
+                                        TextColor="White">
+                                    </Label>
+                                </StackLayout>
+                                
+                             </StackLayout>
+                             
+                        </StackLayout>
+                        
+                    </Frame>
+
+                </StackLayout>
+
+                <Frame  
+                    BackgroundColor="{StaticResource GrayLightTextColor}"
+                    CornerRadius="10" 
+                    HasShadow="false" 
+                    Margin="30,20" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    
+                    Padding="3">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <StackLayout 
+                            Spacing="0"
+                            BackgroundColor="Transparent" 
+                            HorizontalOptions="CenterAndExpand" 
+                            VerticalOptions="CenterAndExpand" 
+                            Grid.Column="0" Grid.Row="0" >
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding AddBonusCommand}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Image 
+                                BackgroundColor="Transparent" 
+                                HorizontalOptions="CenterAndExpand" 
+                                Source="icon_reads" 
+                                VerticalOptions="CenterAndExpand" 
+                                HeightRequest="52">
+                            </Image>
+                        </StackLayout>
+
+                        <BoxView 
+                            Grid.Column="1" Grid.Row="0" 
+                            BackgroundColor="{StaticResource GrayTextColor}" 
+                            WidthRequest="1" 
+                            VerticalOptions="FillAndExpand" 
+                            HorizontalOptions="End">
+                        </BoxView>
+                        <StackLayout 
+                            Spacing="0"
+                            BackgroundColor="Transparent" 
+                            HorizontalOptions="CenterAndExpand" 
+                            VerticalOptions="CenterAndExpand" 
+                            Grid.Column="2" 
+                            Grid.Row="0" >
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ClearBonusCommand}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Image 
+                                BackgroundColor="Transparent" 
+                                HorizontalOptions="CenterAndExpand" 
+                                Source="icon_cancels" 
+                                VerticalOptions="CenterAndExpand" 
+                                HeightRequest="52">
+                            </Image>
+                        </StackLayout>
+                        <BoxView 
+                            Grid.Column="3" 
+                            Grid.Row="0" 
+                            BackgroundColor="{StaticResource GrayTextColor}" 
+                            WidthRequest="1" 
+                            VerticalOptions="FillAndExpand" 
+                            HorizontalOptions="End">
+                        </BoxView>
+                        <StackLayout 
+                            Spacing="0"
+                            BackgroundColor="Transparent" 
+                            HorizontalOptions="CenterAndExpand" 
+                            VerticalOptions="CenterAndExpand" 
+                            Grid.Column="4" Grid.Row="0" >
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding FinishBonusCommand}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Image 
+                                BackgroundColor="Transparent" 
+                                HorizontalOptions="CenterAndExpand" 
+                                Source="{Binding Image, Mode=TwoWay}"
+                                VerticalOptions="CenterAndExpand" 
+                                HeightRequest="52">
+                            </Image>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+                <StackLayout 
+                    Margin="0,10,10,10" VerticalOptions="End">
+                    <Image 
+                        BackgroundColor="Transparent" 
+                        HorizontalOptions="End" 
+                        Source="logoSodexo.png" 
+                        VerticalOptions="End" 
+                        WidthRequest="200">
+                    </Image>
+                </StackLayout>
+            </StackLayout>  
+            <controls:BusyIndicator IsBusy="{Binding IsLoading}" IsVisible="{Binding IsLoading}"></controls:BusyIndicator>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

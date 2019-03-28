@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<popup:PopupPage 
+  xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Conexo.Views.Messages.BonoSuccessMessage"
+    Padding="30">
+
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+
+           <Frame Margin="0" Padding="30" WidthRequest="190" CornerRadius="10">
+
+            <StackLayout
+                Spacing="10">
+                
+                <StackLayout
+                    Orientation="Horizontal"
+                    Spacing="0"
+                    VerticalOptions="Start">
+                    
+                    <Label 
+                        Style="{DynamicResource labelStyleBold}"
+                        x:Name="labelTitle"
+                        FontSize="Medium"
+                        HorizontalTextAlignment="Center" 
+                        TextColor="{StaticResource HeadingTextColor}"
+                        VerticalOptions="CenterAndExpand">
+                    </Label>
+
+                    <Image
+                        Margin="5,0,0,5"
+                        BackgroundColor="Transparent"
+                        Aspect="AspectFit"
+                        HeightRequest="35"
+                        Source="icon_check">
+                    </Image>
+                </StackLayout>
+                
+                <Label 
+                    Margin="0,0,0,0"
+                    x:Name="labelMensaje"
+                    HorizontalTextAlignment="Start" 
+                    FontSize="Large" 
+                    TextColor="{StaticResource GrayTextColor}"
+                    Text=""
+                    Font="15">
+                </Label>
+
+                <Frame 
+                    HasShadow="false" 
+                    BackgroundColor="{StaticResource HeadingTextColor}" 
+                    HeightRequest="20" 
+                    CornerRadius="10" 
+                    Padding="0,15,0,15"
+                    Margin="0,20,0,0">
+                    <StackLayout 
+                        Orientation="Horizontal" 
+                        Spacing="0" 
+                        BackgroundColor="Transparent" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand">
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LeerNuevo_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                    
+                        <StackLayout 
+                            HorizontalOptions="StartAndExpand">
+                        </StackLayout>
+                        <Label 
+                            Style="{DynamicResource labelStyleBold}"
+                            BackgroundColor="Transparent" 
+                            Text="LEER NUEVO BONO" 
+                            TextColor="White" 
+                            VerticalOptions="Start" 
+                            HorizontalOptions="Center" 
+                            Font="18">
+                        </Label>
+                        <StackLayout HorizontalOptions="EndAndExpand"></StackLayout>
+                    </StackLayout>
+                </Frame>
+
+
+                <Frame HasShadow="false" BackgroundColor="{StaticResource HeadingTextColor}" HeightRequest="20" CornerRadius="10" Padding="0,15,0,15" Margin="0,20,0,0">
+                    <StackLayout Orientation="Horizontal" Spacing="0" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Handle_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                    
+                        <StackLayout HorizontalOptions="StartAndExpand"></StackLayout>
+                        <Label 
+                            Style="{DynamicResource labelStyleBold}" 
+                            BackgroundColor="Transparent" 
+                            Text="CERRAR" 
+                            TextColor="White" 
+                            VerticalOptions="Start"
+                            HorizontalOptions="Center" 
+                            Font="18">
+                        </Label>
+                        <StackLayout HorizontalOptions="EndAndExpand"></StackLayout>
+                    </StackLayout>
+                </Frame>
+
+              </StackLayout>
+    </Frame>
+    </StackLayout>
+    
+    
+</popup:PopupPage>
+

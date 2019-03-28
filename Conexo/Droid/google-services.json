@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "710666662795",
+    "firebase_url": "https://sodexo-conexo.firebaseio.com",
+    "project_id": "sodexo-conexo",
+    "storage_bucket": "sodexo-conexo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710666662795:android:050cebb921ccfd3f",
+        "android_client_info": {
+          "package_name": "co.com.doctus.Sodexo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710666662795-a8aotob8jmanprb9h217v41t3iricvq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmnli5lqFWenXXFEWtZB513Hyi4xdo1PI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

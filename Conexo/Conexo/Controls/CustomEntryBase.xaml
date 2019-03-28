@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:Conexo.Controls"
+    x:Class="Conexo.Controls.CustomEntryBase">
+    
+    <ContentView.Content>
+         <StackLayout Spacing="2">
+            <local:CustomEntry 
+                x:Name="customEntry" 
+                Text="{Binding Text, Mode=TwoWay}" 
+                HorizontalOptions="FillAndExpand">
+            </local:CustomEntry>
+            <BoxView 
+                x:Name="BottomBorder"
+                BackgroundColor="{StaticResource GrayTextColor}"   
+                HeightRequest="1" Margin="0" 
+                HorizontalOptions="FillAndExpand">
+            </BoxView>
+        </StackLayout>
+    </ContentView.Content>
+    
+</ContentView>
